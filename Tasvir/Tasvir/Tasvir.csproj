@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tasvir.Data\Tasvir.Data.csproj" />
+    <ProjectReference Include="..\Tasvir.Services\Tasvir.Services.csproj" />
   </ItemGroup>
 
 </Project>
