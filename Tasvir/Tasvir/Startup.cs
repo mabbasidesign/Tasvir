@@ -26,8 +26,11 @@ namespace Tasvir
         {
             services.AddDbContext<TasvirDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddMvc();
+
             services.AddScoped<IImage, ImageService>();
+            services.AddMvc();
+            services.AddSingleton(Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +52,7 @@ namespace Tasvir
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Gallery}/{action=Index}/{id?}");
             });
         }
     }
